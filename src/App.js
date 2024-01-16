@@ -13,8 +13,8 @@ const theme = createTheme({
     },
     accent: {
       100: '#990000',
-    
       200: '#ffa783',
+      
     },
     text: {
       100: '#FFFFFF',
