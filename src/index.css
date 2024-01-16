@@ -26,3 +26,12 @@
   margin: 0;
   padding: 0;
 }
+
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  color: var(--text-100) !important;
+
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  color: var(--text-100) !important;
+}
