@@ -111,15 +111,19 @@ const Footer = () => {
 
                         InputProps={{
                             sx: {
-                                color: 'var(--text-100)', borderColor: 'var(--text-100)', marginBottom: '0.5rem'
+                                color: 'var(--text-100)', borderColor: 'var(--text-100)', marginBottom: '0.5rem', 
+                                "::placeholder": {
+                                    color: 'var(--text-100)',
+                                }
                             }
                         }}
-                        
+
                         onChange={handleEmailChange}
+
                     />
                     {/* Botão Subscribe */}
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <Button variant="contained" color="primary" sx={{ marginRight: '1rem' }} onClick={handleSubscribe}>Subscribe</Button>
+                        <Button variant="contained" color="primary" sx={{ marginRight: '1rem', color: 'var(--text-300)', backgroundColor: 'var(--text-100)', ":hover": { backgroundColor: 'var(--primary-300)' } }} onClick={handleSubscribe}>Subscribe</Button>
                         {showAlert && (
                             <Alert variant="outlined" severity={alertType} sx={{ color: 'lime', borderColor: 'lime', width: '100%' }}>
                                 {alertMessage}
