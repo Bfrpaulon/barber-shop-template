@@ -6,7 +6,7 @@ export default function HomePage() {
 
     return (
 
-        <Box sx={{ background: "var(--bg-100)" }}>
+        <Box sx={{ background: "var(--bg-100)" , maxWidth: '100vw', height: '100vh' , overflowX: 'hidden' }}>
             <Navbar />
             <CustomSlider />
         </Box>

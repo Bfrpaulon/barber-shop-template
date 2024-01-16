@@ -35,8 +35,13 @@ const CustomSlider = () => {
             options={{
                 align: "prev",
                 circular: true,
-                bounce: 30,
+                bounce: 300,
+                nextButton: true,
+                prevButton: true,
+
             }}
+
+
         >
             {images.map((image, index) => (
                 <Paper
