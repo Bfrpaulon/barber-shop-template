@@ -38,9 +38,7 @@ const CustomSlider = () => {
                 bounce: 300,
                 nextButton: true,
                 prevButton: true,
-
             }}
-
 
         >
             {images.map((image, index) => (
@@ -56,11 +54,11 @@ const CustomSlider = () => {
                         alignItems: 'center',
                     }}
                 >
-                    <Container>
+                    <Container sx={{ animation: 'fadeIn 3s ease' }}>
                         <Grid container justifyContent="center" alignItems="center">
                             <Grid item xs={12} md={6}>
-                                <Box color="#fff" textAlign="center">
-                                    <Typography variant="h4" gutterBottom>
+                                <Box color="#fff" textAlign="left">
+                                    <Typography variant="h3" gutterBottom>
                                         {texts[index].title}
                                     </Typography>
                                     <Typography variant="body1" gutterBottom>
