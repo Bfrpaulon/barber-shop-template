@@ -1,52 +1,88 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, Button, useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { AppBar, Toolbar, Button } from '@mui/material';
+import Logo from '../Logo/Logo';
 
 const Navbar = () => {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
     return (
-        <AppBar position="static" sx={{ backgroundColor: theme.palette.background[200], opacity: 0, animation: 'fadeIn 1s forwards' }}>
+        <AppBar sx={{ backgroundColor: "var(--bg-300)", opacity: 0, animation: 'fadeIn 1s forwards', transition: 'opacity 1s', width: '100vw', height: 100, alignSelf: 'center', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row' }}>
+            <Logo />
             <Toolbar>
-                <Button color="inherit" component={Link} to="/" sx={buttonStyles(isMobile)}>
+                <Button sx={{
+                    color: 'var(--primary-100)',
+                    fontSize: '1.1rem',
+                    ":hover": {
+                        color: 'var(--primary-300)'
+                    }
+                }} component={Link} to="/">
                     Home
                 </Button>
-                <Button color="inherit" component={Link} to="/contact" sx={buttonStyles(isMobile)}>
-                    Contact
-                </Button>
-                <Button color="inherit" component={Link} to="/about" sx={buttonStyles(isMobile)}>
+                <Button sx={{
+                    color: 'var(--primary-100)',
+                    fontSize: '1.1rem',
+                    ":hover": {
+                        color: 'var(--primary-300)'
+                    }
+                }} component={Link} to="/about">
                     About
                 </Button>
-                <Button color="inherit" component={Link} to="/services" sx={buttonStyles(isMobile)}>
+                <Button sx={{
+                    color: 'var(--primary-100)',
+                    fontSize: '1.1rem',
+                    ":hover": {
+                        color: 'var(--primary-300)'
+                    }
+                }} component={Link} to="/services">
                     Services
                 </Button>
-                <Button color="inherit" component={Link} to="/pricing-plan" sx={buttonStyles(isMobile)}>
+                <Button sx={{
+                    color: 'var(--primary-100)',
+                    fontSize: '1.1rem',
+                    ":hover": {
+                        color: 'var(--primary-300)'
+                    }
+                }} component={Link} to="/pricing-plan">
                     Pricing Plan
                 </Button>
-                <Button color="inherit" component={Link} to="/our-barber" sx={buttonStyles(isMobile)}>
+                <Button sx={{
+                    color: 'var(--primary-100)',
+                    fontSize: '1.1rem',
+                    ":hover": {
+                        color: 'var(--primary-300)'
+                    }
+                }} component={Link} to="/our-barber">
                     Our Barber
                 </Button>
-                <Button color="inherit" component={Link} to="/testimonials" sx={buttonStyles(isMobile)}>
+                <Button sx={{
+                    color: 'var(--primary-100)',
+                    fontSize: '1.1rem',
+                    ":hover": {
+                        color: 'var(--primary-300)'
+                    }
+                }} component={Link} to="/working-hours">
+                    Working Hours
+                </Button>
+                <Button sx={{
+                    color: 'var(--primary-100)',
+                    fontSize: '1.1rem',
+                    ":hover": {
+                        color: 'var(--primary-300)'
+                    }
+                }} component={Link} to="/testimonials">
                     Testimonials
                 </Button>
-                <Button color="inherit" component={Link} to="/working-hours" sx={buttonStyles(isMobile)}>
-                    Working Hours
+                <Button sx={{
+                    color: 'var(--primary-100)',
+                    fontSize: '1.1rem',
+                    ":hover": {
+                        color: 'var(--primary-300)'
+                    }
+                }} component={Link} to="/contact">
+                    Contact
                 </Button>
             </Toolbar>
         </AppBar>
     );
 };
-
-const buttonStyles = (isMobile) => ({
-    marginRight: isMobile ? 1 : 2,
-    '&:hover': {
-        backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    },
-    '@media (max-width: 600px)': {
-        fontSize: '0.8rem',
-    },
-});
 
 export default Navbar;
