@@ -1,10 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
-import { Container } from '@mui/material'
+import { Box } from '@mui/material'
+import CustomSlider from '../components/CustomSlider/CustomSlider';
 export default function HomePage() {
+
     return (
-        <Container maxWidth="xl" sx={{background: "var(--bg-100)"}}>
+
+        <Box sx={{ background: "var(--bg-100)" }}>
             <Navbar />
-        </Container>
+            <CustomSlider />
+        </Box>
     )
 }

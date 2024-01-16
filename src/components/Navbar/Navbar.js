@@ -5,7 +5,7 @@ import Logo from '../Logo/Logo';
 
 const Navbar = () => {
     return (
-        <AppBar sx={{ backgroundColor: "var(--bg-300)", opacity: 0, animation: 'fadeIn 1s forwards', transition: 'opacity 1s', width: '100vw', height: 100, alignSelf: 'center', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row' }}>
+        <AppBar position='static' sx={{ backgroundColor: "var(--bg-300)", opacity: 0, animation: 'fadeIn 1s forwards', transition: 'opacity 1s', width: '100vw', height: 100, alignSelf: 'center', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row' }}>
             <Logo />
             <Toolbar>
                 <Button sx={{
