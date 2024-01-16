@@ -22,47 +22,46 @@ const Footer = () => {
         }
     };
 
-    const handleSubscribe = () => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex for email validation
-
-        if (!emailRegex.test(email)) {
-            setShowAlert(true);
-            setAlertType('error');
-            setAlertMessage('Invalid email');
-            return;
-        }
-
-        fetch('https://barber-shop-api.cyclic.app/api/newsletter', {
-            method: 'POST',
-            body: JSON.stringify({ email }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setEmail('');
-                setShowAlert(true);
-                setAlertType('success');
-                setAlertMessage('Thank you for subscribing.');
-
-                setTimeout(() => {
-                    setShowAlert(false);
-                }, 2000);
-
-            })
-            .catch(error => {
-                console.error(error);
-                setShowAlert(true);
-                setAlertType('error');
-                setAlertMessage('An error occurred. Please try again later.');
-
-                setTimeout(() => {
-                    setShowAlert(false);
-                }, 2000);
-            });
-    };
+ const handleSubscribe = () => {
+     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex for email validation
+ 
+     if (!emailRegex.test(email)) {
+         setShowAlert(true);
+         setAlertType('error');
+         setAlertMessage('Invalid email');
+         return;
+     }
+ 
+     fetch('https://barber-shop-api.cyclic.app/api/newsletter', {
+         method: 'POST',
+         body: JSON.stringify({ email }),
+         headers: {
+             'Content-Type': 'application/json'
+         }
+     })
+         .then(response => response.json())
+         .then(data => {
+             console.log(data);
+             setEmail('');
+             setShowAlert(true);
+             setAlertType('success');
+             setAlertMessage('Thank you for subscribing.');
+             setTimeout(() => {
+                 setShowAlert(false);
+             }, 1000);
+ 
+         })
+         .catch(error => {
+             console.error(error);
+             setShowAlert(true);
+             setAlertType('error');
+             setAlertMessage('An error occurred. Please try again later.');
+ 
+             setTimeout(() => {
+                 setShowAlert(false);
+             }, 1000);
+         });
+ };
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -72,7 +71,7 @@ const Footer = () => {
     };
 
     return (
-        <Container maxWidth="xl" sx={{ background: 'var(--bg-300)', padding: '2rem 0', justifyContent: 'center' }}>
+        <Container maxWidth="xl" sx={{ background: 'var(--bg-100)', padding: '2rem 0', justifyContent: 'center' }}>
             <Grid container spacing={3}>
                 {/* Coluna 1: Get in Touch */}
                 <Grid item xs={12} md={4} sx={{ textAlign: 'left', color: 'var(--text-100)' }}>
@@ -108,13 +107,14 @@ const Footer = () => {
                         fullWidth
                         margin="normal"
                         type="email"
-
+                        value={email}
                         InputProps={{
                             sx: {
                                 color: 'var(--text-100)', borderColor: 'var(--text-100)', marginBottom: '0.5rem', 
                                 "::placeholder": {
-                                    color: 'var(--text-100)',
-                                }
+                                    color: 'var(--text-100)'
+                                },
+
                             }
                         }}
 
@@ -125,7 +125,7 @@ const Footer = () => {
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                         <Button variant="contained" color="primary" sx={{ marginRight: '1rem', color: 'var(--text-300)', backgroundColor: 'var(--text-100)', ":hover": { backgroundColor: 'var(--primary-300)' } }} onClick={handleSubscribe}>Subscribe</Button>
                         {showAlert && (
-                            <Alert variant="outlined" severity={alertType} sx={{ color: 'lime', borderColor: 'lime', width: '100%' }}>
+                            <Alert variant="outlined" severity={alertType} sx={{ width: '100%' }}>
                                 {alertMessage}
                             </Alert>
                         )}
